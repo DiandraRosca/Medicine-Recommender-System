@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details for {{ medicine_name }}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .list-group-item {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Details for {{ medicine_name }}</h1>
+        <div class="mt-4">
+            <h2>Potential Interactions:</h2>
+            <ul class="list-group">
+                {% for interaction in interactions %}
+                    <li class="list-group-item">{{ loop.index }}. {{ interaction }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="mt-4">
+            <h2>Allergenic Ingredients:</h2>
+            <ul class="list-group">
+                {% for warning in allergy_warning %}
+                    <li class="list-group-item">{{ loop.index }}. {{ warning }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="mt-4">
+            <h2>Contraindications:</h2>
+            <ul class="list-group">
+                {% for warning in contraindication_warning %}
+                    <li class="list-group-item">{{ loop.index }}. {{ warning }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+</body> 
+</html>
