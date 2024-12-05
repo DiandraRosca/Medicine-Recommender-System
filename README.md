@@ -1,2 +1,2 @@
 # Medicine-Recommender-System
- Application designed to provide alternatives to a selected drug using machine learning techniques and a similarity matrix
+This application is a medicine recommendation system that suggests similar drugs based on cosine similarity of their features, such as names, ingredients, and properties. It also highlights potential drug interactions, allergenic ingredients, and contraindications to ensure safe usage. Unlike generic systems, it incorporates detailed warnings about allergies and contraindications, offering a personalized and safer recommendation experience. The core algorithm leverages text vectorization and cosine similarity for precise matching.
