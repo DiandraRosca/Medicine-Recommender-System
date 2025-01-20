@@ -46,6 +46,28 @@
     <div class="container">
         <h1>Medicine Recommender System</h1>
         <form method="post">
+            <!-- Detalii pacient -->
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="dosesPerDay">How many times per day should you take your medicine?</label>
+                <input type="number" class="form-control" id="dosesPerDay" name="dosesPerDay" placeholder="Enter times per day">
+            </div>
+            <div class="form-group">
+                <label for="administrationTimes">Administration Times (e.g., 08:00, 14:00, 20:00):</label>
+                <input type="text" class="form-control" id="administrationTimes" name="administrationTimes" placeholder="Enter times separated by commas">
+            </div>
+            <!-- Selectare medicament -->
             <div class="form-group">
                 <label for="medicine">Type your medicine name whose alternative is to be recommended</label>
                 <select class="form-control" id="medicine" name="medicine">
@@ -54,7 +76,9 @@
                     {% endfor %}
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Recommend Medicine</button>
+            <button type="submit" class="btn btn-primary" name="action" value="recommend">Recommend Medicine</button>
+            <button type="submit" class="btn btn-primary" name="action" value="submit">Submit</button>
+
         </form>
         <div class="mt-4">
             {% if recommendations %}
@@ -72,6 +96,7 @@
                 </div>
             {% endif %}
         </div>
+      
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
